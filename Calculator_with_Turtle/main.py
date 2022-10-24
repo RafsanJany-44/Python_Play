@@ -7,15 +7,14 @@ tk.title("Calculator")
 # 'button_click' function : 
 # This Function continuously updates the 
 # input field whenever you enter a number
+theme_color= "olive"
 
 def button_click(element):
     global final_string
     final_string = final_string + str(element)
     input_item.set(final_string)
 
-# 'button_clear' function :This is used to clear 
-# the input field
-
+#clear the input field
 def button_clear():
     global final_string 
     final_string = "" 
@@ -27,8 +26,7 @@ def button_clear():
 def button_equal():
     global final_string
     try:
-        res = str(eval("2 ** 8"))
-        result = str(eval(final_string))+" "+res # 'eval':This function is used to evaluates the string final_string directly
+        result = str(eval(final_string))# 'eval':This function is used to evaluates the string final_string directly
     #print(final_string)
     except Exception as e:
         result = "Error: "+str(e)
@@ -43,13 +41,13 @@ input_item = StringVar()
 
 # Let us creating a frame for the input field
 
-input_window = Frame(tk, width=295, height=50, bd=0, highlightbackground="olive", highlightcolor="green", highlightthickness=3)
+input_window = Frame(tk, width=295, height=50, bd=0, highlightbackground=theme_color, highlightcolor="green", highlightthickness=3)
 
 input_window.pack(side=TOP)
 
 #Let us create a input field inside the 'Frame'
 
-input_section = Entry(input_window, font=('arial', 18, 'bold'), textvariable=input_item, width=50, bg="blue", bd=0, justify=RIGHT)
+input_section = Entry(input_window, font=('arial', 18, 'bold'), textvariable=input_item, width=50, bg=theme_color, bd=0, justify=RIGHT)
 
 input_section.grid(row=0, column=0)
 
@@ -63,7 +61,7 @@ btns_frame.pack()
 
 # first row
 
-clear = Button(btns_frame, text = "C", fg = "black", width = 32, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_clear()).grid(row = 0, column = 0, columnspan = 3, padx = 1, pady = 1)
+clear = Button(btns_frame, text = "AC", fg = "black", width = 32, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_clear()).grid(row = 0, column = 0, columnspan = 3, padx = 1, pady = 1)
 
 divide = Button(btns_frame, text = "/", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click("/")).grid(row = 0, column = 3, padx = 1, pady = 1)
 
@@ -101,11 +99,33 @@ plus = Button(btns_frame, text = "+", fg = "black", width = 10, height = 3, bd =
 
 zero = Button(btns_frame, text = "0", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "target", command = lambda: button_click(0)).grid(row = 4, column = 0,padx = 1, pady = 1)
 
+equals = Button(btns_frame, text = "=", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_equal()).grid(row = 4, column = 1, padx = 1, pady = 1)
+
 point = Button(btns_frame, text = ".", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click(".")).grid(row = 4, column = 2, padx = 1, pady = 1)
 
-
 power = Button(btns_frame, text = "^", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click("**")).grid(row = 4, column = 3, padx = 1, pady = 1)
-equals = Button(btns_frame, text = "=", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_equal()).grid(row = 4, column = 1, padx = 1, pady = 1)
+
+
+# fith row
+
+zero = Button(btns_frame, text = "0", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "target", command = lambda: button_click(0)).grid(row = 5, column = 0,padx = 1, pady = 1)
+
+equals = Button(btns_frame, text = "=", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_equal()).grid(row = 5, column = 1, padx = 1, pady = 1)
+
+point = Button(btns_frame, text = ".", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click(".")).grid(row = 5, column = 2, padx = 1, pady = 1)
+
+power = Button(btns_frame, text = "^", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click("**")).grid(row = 5, column = 3, padx = 1, pady = 1)
+
+
+# fith row
+
+zero = Button(btns_frame, text = "0", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "target", command = lambda: button_click(0)).grid(row = 6, column = 0,padx = 1, pady = 1)
+
+equals = Button(btns_frame, text = "=", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_equal()).grid(row = 6, column = 1, padx = 1, pady = 1)
+
+point = Button(btns_frame, text = ".", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click(".")).grid(row = 6, column = 2, padx = 1, pady = 1)
+
+power = Button(btns_frame, text = "root of", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click("**")).grid(row = 6, column = 3, padx = 1, pady = 1)
 
 
 tk.mainloop()
