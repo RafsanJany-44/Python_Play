@@ -44,6 +44,15 @@ def tangent():
     except Exception as e:
         result = "Error: "+str(e)
     input_item.set(result)
+    
+    
+def root_of():
+    try:
+        num = final_string.split(" ")
+        result=float(num[0])**float(num[-1])
+    except Exception as e:
+        result = "Error: "+str(e)
+    input_item.set(result) 
 
 final_string = ""
 
@@ -135,7 +144,7 @@ zero = Button(btns_frame, text = "0", fg = "black", width = 10, height = 3, bd =
 
 equals = Button(btns_frame, text = "=", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_equal()).grid(row = 6, column = 1, padx = 1, pady = 1)
 
-point = Button(btns_frame, text = ".", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click(".")).grid(row = 6, column = 2, padx = 1, pady = 1)
+point = Button(btns_frame, text = "root of", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click(" root_of ")).grid(row = 6, column = 2, padx = 1, pady = 1)
 
 power = Button(btns_frame, text = "tan", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: tangent()).grid(row = 6, column = 3, padx = 1, pady = 1)
 
