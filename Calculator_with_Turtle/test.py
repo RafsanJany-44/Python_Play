@@ -1,3 +1,4 @@
+
 from tkinter import *
 import math
 
@@ -100,7 +101,7 @@ multiply = Button(btns_frame, text = "*", fg = "black", width = 10, height = 3, 
 
 four = Button(btns_frame, text = "4", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "target", command = lambda: button_click(4)).grid(row = 2, column = 0, padx = 1, pady = 1)
 
-five = Button(btns_frame, text = "5", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "target", command = lambda: button_click(5)).grid(row = 2, column = 1, padx = 1, pady = 1)
+five = Button(btns_frame, text = "5", fg = "black", width = 10, height = 3, bd = 0, bg = "blue", cursor = "target", command = lambda: button_click(5)).grid(row = 2, column = 1, padx = 1, pady = 1)
 
 six = Button(btns_frame, text = "6", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "target", command = lambda: button_click(6)).grid(row = 2, column = 2, padx = 1, pady = 1)
 
