@@ -49,7 +49,7 @@ input_window.pack(side=TOP)
 
 #Let us create a input field inside the 'Frame'
 
-input_section = Entry(input_window, font=('arial', 18, 'bold'), textvariable=input_item, width=50, bg="#eee", bd=0, justify=RIGHT)
+input_section = Entry(input_window, font=('arial', 18, 'bold'), textvariable=input_item, width=50, bg="blue", bd=0, justify=RIGHT)
 
 input_section.grid(row=0, column=0)
 
@@ -99,13 +99,13 @@ plus = Button(btns_frame, text = "+", fg = "black", width = 10, height = 3, bd =
 
 # fourth row
 
-zero = Button(btns_frame, text = "0", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "target", command = lambda: button_click(0)).grid(row = 4, column = 0, columnspan = 2, padx = 1, pady = 1)
+zero = Button(btns_frame, text = "0", fg = "black", width = 10, height = 3, bd = 0, bg = "#fff", cursor = "target", command = lambda: button_click(0)).grid(row = 4, column = 0,padx = 1, pady = 1)
 
 point = Button(btns_frame, text = ".", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click(".")).grid(row = 4, column = 2, padx = 1, pady = 1)
 
-equals = Button(btns_frame, text = "=", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_equal()).grid(row = 4, column = 3, padx = 1, pady = 1)
 
-#power = Button(btns_frame, text = "^", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click("**")).grid(row = 4, column = 3, padx = 1, pady = 1)
+power = Button(btns_frame, text = "^", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_click("**")).grid(row = 4, column = 3, padx = 1, pady = 1)
+equals = Button(btns_frame, text = "=", fg = "black", width = 10, height = 3, bd = 0, bg = "#eee", cursor = "target", command = lambda: button_equal()).grid(row = 4, column = 3, padx = 1, pady = 1)
 
 
 tk.mainloop()
