@@ -26,7 +26,11 @@ def button_clear():
 
 def button_equal():
     global final_string
-    result = str(eval(final_string)) # 'eval':This function is used to evaluates the string final_string directly
+    try:
+        result = str(eval(final_string)) # 'eval':This function is used to evaluates the string final_string directly
+    #print(final_string)
+    except Exception as e:
+        result = e
     input_item.set(result)
     final_string = ""
 
