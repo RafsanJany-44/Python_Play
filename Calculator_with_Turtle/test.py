@@ -2,13 +2,9 @@
 from tkinter import *
 import math
 
-tk = Tk() # This is to create a basic window
+tk = Tk() 
 tk.title("Calculator")
 
-###################Starting with functions ####################
-# 'button_click' function : 
-# This Function continuously updates the 
-# input field whenever you enter a number
 theme_color= "#EAFF73"
 
 def button_click(element):
@@ -17,20 +13,16 @@ def button_click(element):
     print(final_string)
     input_item.set(final_string)
 
-#clear the input field
 def button_clear():
     global final_string 
     final_string = "" 
     input_item.set("")
 
-# 'button_equal':This method calculates the final_string 
-# present in input field
 
 def button_equal():
     global final_string
     try:
-        result = str(eval(final_string))# 'eval':This function is used to evaluates the string final_string directly
-    #print(final_string)
+        result = str(eval(final_string))
     except Exception as e:
         result = "Error: "+str(e)
     input_item.set(result)
@@ -61,21 +53,19 @@ final_string = ""
 
 input_item = StringVar()
 
-# Let us creating a frame for the input field
+
 
 input_window = Frame(tk, width=295, height=50, bd=0, highlightbackground=theme_color, highlightcolor="green", highlightthickness=3)
 
 input_window.pack(side=TOP)
 
-#Let us create a input field inside the 'Frame'
+
 
 input_section = Entry(input_window, font=('arial', 18, 'bold'), textvariable=input_item, width=50, bg=theme_color, bd=0, justify=RIGHT)
 
 input_section.grid(row=0, column=0)
 
-input_section.pack(ipady=10) # 'ipady' is internal padding to increase the height of input field
-
-#Let us creating another 'Frame' for the button below the 'input_window'
+input_section.pack(ipady=10)
 
 btns_frame = Frame(tk, width=312, height=272.5, bg=theme_color)
 

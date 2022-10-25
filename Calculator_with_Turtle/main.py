@@ -32,8 +32,7 @@ def button_equal():
         result = "Error: "+str(e)
     input_item.set(result)
     final_string = ""
-
-final_string = ""
+    final_string = ""
 
 # 'StringVar()' :It is used to get the instance of input field
 
