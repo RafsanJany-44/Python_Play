@@ -81,25 +81,11 @@ def isPrime(num):
         return str(num)+" is not a prime number"
 
 
-
-def fib_iter(n):
-    a=1
-    b=1
-    if n==1:
-        print('0')
-    elif n==2:
-        print('0','1')
-    else:
-        print("Iterative Approach: ", end=' ')
-        print('0',a,b,end=' ')
-        for i in range(n-3):
-            total = a + b
-            b=a
-            a= total
-            print(total,end=' ')
-        print()
-        return b
-
+def fact(n):
+    try:
+        return math.factorial(n)
+    except Exception as e:
+        return "Error: " +str(e)
 
 
 # main function
@@ -112,9 +98,9 @@ def main():
 
     #adding drop down box for selecting operation
     operation = st.selectbox("Select Operation", ["Add", "Substract", "Multiplication",
-                                                  "Divided", "Power", "Root",
-                                                  "Sin", "Cos", "Tan", "Sinh",
-                                                  "Cosh", "Tanh", "isPrime"])
+                                                "Divided", "Power", "Root",
+                                                "Sin", "Cos", "Tan", "Sinh",
+                                                "Cosh", "Tanh", "isPrime", "Factorial"])
 
 
     if operation == "Add":
@@ -143,6 +129,8 @@ def main():
         st.write(Tanh(number_1))
     elif operation == "isPrime":
         st.write(isPrime(number_1))
+    elif operation == "Factorial":
+        st.write(fact(number_1))
 
 
 
